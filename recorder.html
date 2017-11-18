@@ -1,0 +1,96 @@
+<!-- Bootstrap v3.0.3 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="recorder.js"></script>
+<link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" />
+<section class="container" id="Other" style="margin-bottom:15px; padding: 10px 10px; font-family: Verdana, Geneva, sans-serif; color:#333333; font-size:0.9em;">
+<div class="row col-xs-12 col-md-12">
+
+<!-- Instructions -->
+<div class="container">
+<div class="page-header">
+<h1>Record audio samples</h1>
+</div>
+
+<div class="panel panel-primary">
+<div class="panel-heading"><strong>Task description</strong></div>
+
+<div class="panel-body">
+	<p>Record audio sample and upload to publisher's server.</p>
+</div>
+
+<div class="panel-heading"><strong>Instructions</strong></div>
+
+<div class="panel-body"><b>Step 1: Record audio</b>
+
+	<ol type="number">
+		<li>System Checks:
+			<ul type="disc">
+				<li>Make sure your microphone is connected and working.</li>
+				<li>Use a recent Goggle Chrome browser version, and allow permission for browser to use microphone.</li>
+				<li><b>NOTE: You may have to enable loading scripts on this page. Look for the symbol <img src="shield_icon.png" /> on the top right of the page on the address bar.<br />
+				<font color="red">Refresh the page after providing permissions.</font></b></li>
+			</ul>
+		</li>
+		<li>Make the recording:
+			<ul type="disc">
+				<li>Press RECORD to start, and STOP to end your recording.</li>
+				<li>Playback the result using the ► button</li>
+				<li>Repeat recording until you are happy with the recording content and quality (old recordings are over-written)</li>
+			</ul>
+		</li>
+		<li>Upload recording:
+		<ul type="disc">
+			<li>Click on the <b>Upload</b> button to submit. On successful upload, the message <b>Uploaded successfully</b> appears.</li>
+		</ul>
+		</li>
+	</ol>
+
+</div>
+
+<div class="panel-heading"><strong>Questions/Tasks</strong></div>
+<div id="record">
+
+<!-- Fieldset is used with Amazon Mechanical Turk for variables that are saved on submit and sent to the task publisher -->
+<fieldset>
+	<div><label class="input-group-btn">1. Record <i>Voice Command</i></label>
+
+		<div class="alert alert-danger" id="shown"><strong>Warning!</strong> Awaiting permission for microphone. Connect microphone, provide permission and refresh page!</div>
+
+		<div id="hidden" style="display:none">
+			<ul style="list-style-type: none;">
+				<li><button class="btn btn-primary" id="record_button" onclick="startRecording(this);" style="margin-right:5px">Record</button><button class="btn btn-primary" disabled="disabled" id="stop_button" onclick="stopRecording(this);">Stop</button>
+
+				<p id="recording" style="display:none">Recording ...</p>
+				</li>
+			</ul>
+
+			<input id="filename" name="Q1filename" style="display:none" />
+			<ul id="recordingslist" style="list-style-type: none;"><br />
+				<br /><br /><br /><br /><br /><br />
+				&nbsp;
+				<li>&nbsp;</li>
+				<li>&nbsp;</li>
+				<li>&nbsp;</li>
+				<li>&nbsp;</li>
+				<li>&nbsp;</li>
+			</ul>
+		</div>
+	</div>
+</fieldset>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<script src="getPermission.js"></script>
+<script src="main.js"></script>           
+
+<style type="text/css">
+fieldset {
+    padding: 10px;
+    background:#fbfbfb;
+    border-radius:5px;
+    margin-bottom:5px;
+}
+</style>
